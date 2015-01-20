@@ -1,4 +1,5 @@
-rates = [('USD', 'EUR', 0.86)]
+rates = [('USD', 'EUR', 0.86),
+         ('EUR', 'USD', 1.15)]
 
 
 def convert(rate, value, start, to):
