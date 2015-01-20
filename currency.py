@@ -1,16 +1,14 @@
-rates = [('USD,', 'EUR', 0.86),
-         ('EUR', 'USD', 1.15),
-         ('USD', 'JPY', 118.68),
-         ('GBP', 'USD', 1.51),
-         ('USD', 'CHF', 0.87),
-         ('USD', 'CAD', 1.21),
-         ('EUR', 'JPY', 137.08),
-         ('AUD', 'USD', 0.82)]
+rates = [('USD', 'EUR', 0.86)]
 
 
-def convert(rates, value, start, to):
+def convert(rate, value, start, to):
     """Takes a rate from a list of exchange rates and applies it to a value by
     by converting from the "start" variable to the "to" variable by the
     corresponding rate."""
+    rate = [tuples[2]
+             for tuples in rates
+             if start == tuples[0] and to == tuples[1]]
     if start == to:
         return value
+    else:
+        return value * rate[0]
