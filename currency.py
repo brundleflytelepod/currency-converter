@@ -1,4 +1,10 @@
-rates = [('USD', 'EUR', 0.86)]
+rates = [('USD', 'EUR', 0.86),
+         ('USD', 'JPY', 118.68),
+         ('GBP', 'USD', 1.51),
+         ('USD', 'CHF', 0.87),
+         ('USD', 'CAD', 1.21),
+         ('EUR', 'JPY', 137.08),
+         ('AUD', 'USD', 0.82)]
 
 
 def get_rate(start, to):
@@ -13,11 +19,9 @@ def get_rate(start, to):
             return rate
 
 
-
 def convert(rates, value, start, to):
-    """Takes a rate from a list of exchange rates and applies it to a value by
-    by converting from the "start" variable to the "to" variable by the
-    corresponding rate."""
+    """Takes a value and applies the correct exchange rate and returns the
+    result."""
     rate = get_rate(start, to)
     if start == to:
         return value
